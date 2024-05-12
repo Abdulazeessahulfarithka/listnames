@@ -26,7 +26,8 @@ const Home = () => {
               <th>name</th>
               <th>description</th>
             </tr>
-          </thead>s
+          </thead>
+          s
           <tbody>
             {userList.map((user, index) => {
               return (
