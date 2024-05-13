@@ -1,6 +1,7 @@
 import axios from "axios";
 import API from "../Global.js";
 import React, { useEffect, useState } from "react";
+import Namelist from "./nameList.js";
 
 const Home = () => {
   const [userList, setUserList] = useState([]);
@@ -19,26 +20,10 @@ const Home = () => {
   console.log("userList:", userList);
   return (
     <div className="container">
-      <div className="col-lg-6 mt-5">
-        <table className="table">
-          <thead>
-            <tr>
-              <th>name</th>
-              <th>description</th>
-            </tr>
-          </thead>
-          s
-          <tbody>
-            {userList.map((user, index) => {
-              return (
-                <tr>
-                  <td>{user.name}</td>
-                  <td>{user.description}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+      <div className="col-lg-12 mt-5">
+        {userList.map((user, index) => {
+          return <Namelist user={user} />;
+        })}
       </div>
     </div>
   );
